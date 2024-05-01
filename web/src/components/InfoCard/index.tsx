@@ -1,13 +1,43 @@
 import styles from './styles.module.css'
 
+interface InfoCardProps {
+    title: string
+    subtitle: string
+    icon: string
+    type?: 'default' | 'info' | 'success' | 'danger'
+}
 
-export default function InfoCard() {
+const backgroundColors = {
+    default: 'var(--border)',
+    info: 'var(--blue-100)',
+    success: 'var(--green-100)',
+    danger: 'var(--red-100)'
+}
+
+const iconColors = {
+    default: 'black',
+    info: 'var(--blue-500)',
+    success: 'var(--primary)',
+    danger: 'var(--danger)'
+}
+
+export default function InfoCard({ title, subtitle, icon, type = 'default' }: InfoCardProps) {
+    const getColor = () => {
+        return {
+            backgroundColor: backgroundColors[type],
+            color: iconColors[type]
+        }
+    }
+
     return (
         <div className={styles.container}>
-            <span className='ph ph-currency-circle-dollar'></span>
+            <span 
+                className={icon} 
+                style={getColor()}>  
+            </span>
             <div>
-                <span>receitas</span>
-                <p>R$ 3.862,00</p>
+                <span>{title}</span>
+                <p>{subtitle}</p>
             </div>
         </div>
     )

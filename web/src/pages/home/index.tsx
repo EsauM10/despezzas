@@ -1,30 +1,56 @@
+import styles from './styles.module.css'
+import { useState } from 'react'
 import CreditCards from '../../components/CreditCards'
+import Dialog from '../../components/Dialog'
 import Expenses from '../../components/Expenses'
 import Goals from '../../components/Goals'
 import InfoCard from '../../components/InfoCard'
 import Months from '../../components/Months'
 import useMonth from '../../hooks/useMonth'
+import ActionButton from '../../components/ActionButton'
 //import { socket } from '../../hooks/useOxygen'
-import styles from './styles.module.css'
 
 
 export default function HomePage() {
     const { month, year } = useMonth()
+    const [visible, setVisible] = useState(false)
+
     /*const sendMessage = () => {
         socket.emit('hello', {'page': 'Home'})
     }*/
+
+    const handleOnClick = () => {
+        console.log(month, year)
+        setVisible(!visible)
+    }
 
     return (
         <div className={styles.container}>
             <header>
                 <span></span>
                 <Months />
-                <button onClick={() => console.log(month, year)}>
+                <button onClick={handleOnClick}>
                     <i className='ph ph-math-operations'></i>
+                    <Dialog visible={visible}>
+                        <ActionButton 
+                            icon='ph ph-caret-circle-down' 
+                            color='var(--danger)'
+                            title='adicionar' 
+                            subtitle='despesa'
+                            onClick={() => {}}
+                        />
+                        <ActionButton 
+                            icon='ph ph-caret-circle-up' 
+                            color='var(--primary)'
+                            title='adicionar' 
+                            subtitle='receita'
+                            onClick={() => {}}
+                        />        
+                    </Dialog>
                 </button>
             </header>
             <div className={styles.topContent}>
-                <section className={styles.insights}>
+                <section>
                     <InfoCard 
                         title='receitas' 
                         subtitle='R$ 3.862,00'
@@ -46,7 +72,7 @@ export default function HomePage() {
                         icon='ph ph-plus-minus'
                     />
                 </section>
-                <section className={styles.creditCards}>
+                <section>
                     <CreditCards />
                 </section>
             </div>
@@ -58,7 +84,6 @@ export default function HomePage() {
                     <Goals />
                 </section>
             </div>
-
         </div>
     )
 }

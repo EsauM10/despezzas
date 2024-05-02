@@ -10,7 +10,7 @@ import { MonthsProvider } from "./contexts/months";
 
 const pages: SidebarItems[] = [
   {name: 'Home', icon: "ph ph-house", component: <HomePage />, active: true},
-  {name: 'Transações', icon: "ph ph-wallet", component: <BoardsPage />, active: false}
+  {name: 'Transações', icon: "ph ph-repeat", component: <BoardsPage />, active: false}
 ]
 
 function App() {

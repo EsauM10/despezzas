@@ -1,0 +1,21 @@
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    cursor: initial;
+}
+
+.container .menu {
+    flex-wrap: wrap;
+    display: flex;
+    position: absolute;
+    width: 215px;
+    padding: 10px;
+    gap: 10px;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-color: white;
+    border: 1px solid var(--border);
+    border-radius: 5px 0 5px 5px;
+}

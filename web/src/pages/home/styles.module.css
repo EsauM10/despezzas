@@ -31,7 +31,7 @@
     font-size: 25px;
 }
 
-.topContent,
+.topContent, 
 .bottomContent {
     flex-wrap: wrap;
     display: flex;
@@ -40,11 +40,10 @@
 }
 
 .bottomContent {
-    flex-grow: 1;
+    height: calc(100% - 290px);
 }
 
-.topContent > section:nth-child(1),
-.bottomContent > section:nth-child(1) {
+.topContent > section:nth-child(1) {
     flex-grow: 2;
     flex-basis: 400px;
     display: flex;
@@ -59,4 +58,11 @@
     flex-basis: 290px;
     min-width: 350px;
     min-height: 200px;
+}
+
+
+.bottomContent > section:nth-child(1) {
+    flex-grow: 2;
+    height: 100%;
+    flex-basis: 400px;
 }

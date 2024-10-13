@@ -15,11 +15,11 @@ export default function Expenses() {
                 {expenses.map((item) => (
                     <li key={item.id}>
                         <div>
-                            <img src="" alt="" />
+                            <img src={item.category.imageUrl} alt="" />
                             <div>
                                 <h1>{item.title}</h1>
                                 <span>{item.status}</span>
-                                <p>{item.category}</p>
+                                <p>{item.category.title}</p>
                             </div>
                         </div>
                         <aside>

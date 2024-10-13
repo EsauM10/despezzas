@@ -15,4 +15,5 @@
 .container h3 {
     font-size: 14px;
     font-weight: var(--font-medium);
+    color: #000;
 }

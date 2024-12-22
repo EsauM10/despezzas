@@ -1,5 +1,4 @@
-import "./App.css"
-import "./hooks/useOxygen";
+import "./App.css";
 
 import { useState } from "react";
 import HomePage from "./pages/home";
@@ -7,6 +6,9 @@ import BoardsPage from "./pages/boards";
 import Sidebar, { SidebarItems } from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import { MonthsProvider } from "./contexts/months";
+import { initOxygen } from "oxygenio";
+
+initOxygen()
 
 const pages: SidebarItems[] = [
   {name: 'Home', icon: "ph ph-house", component: <HomePage />, active: true},

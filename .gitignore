@@ -3,7 +3,7 @@ venv
 __pycache__/
 .pytest_cache/
 build/
-
+todo.txt
 manifest.json
 
 # Logs

@@ -6,6 +6,7 @@ app = Oxygenio()
 @app.on
 def hello(data: dict[str, Any]):
     print(data, type(data))
+    return 'hello'
 
 
 if(__name__=='__main__'):

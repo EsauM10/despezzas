@@ -8,16 +8,17 @@ import InfoCard from '../../components/InfoCard'
 import Months from '../../components/Months'
 import useMonth from '../../hooks/useMonth'
 import ActionButton from '../../components/ActionButton'
-//import { socket } from '../../hooks/useOxygen'
+import { invoke } from 'oxygenio'
 
 
 export default function HomePage() {
     const { month, year } = useMonth()
     const [visible, setVisible] = useState(false)
 
-    /*const sendMessage = () => {
-        socket.emit('hello', {'page': 'Home'})
-    }*/
+    const sendMessage = () => {
+        invoke<string>('hello', {'page': 'Home'})
+        .then((value) => console.log(value))
+    }
 
     const handleOnClick = () => {
         console.log(month, year)
@@ -37,7 +38,7 @@ export default function HomePage() {
                             color='var(--danger)'
                             title='adicionar' 
                             subtitle='despesa'
-                            onClick={() => {}}
+                            onClick={sendMessage}
                         />
                         <ActionButton 
                             icon='ph ph-caret-circle-up' 

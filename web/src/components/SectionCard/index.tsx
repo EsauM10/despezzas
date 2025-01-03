@@ -9,7 +9,7 @@ type SectionCardProps = {
 
 interface EmptyCardProps {
     text: string
-    onClick: () => void
+    onClick: VoidFunction
 }
 
 function EmptyCard({ text, onClick}: EmptyCardProps) {

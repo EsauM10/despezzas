@@ -5,7 +5,7 @@ interface ActionButtonProps {
     subtitle: string
     icon: string
     color: string
-    onClick: () => void
+    onClick: VoidFunction
 }
 
 export default function ActionButton({ title, subtitle, icon, color, onClick }: ActionButtonProps) {

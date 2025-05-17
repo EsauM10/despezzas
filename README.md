@@ -1,4 +1,4 @@
-
+![](https://img.shields.io/badge/status-development-green.svg)
 
 # Expenses Tracker
 This is a Python + React + Vite desktop app made with [Oxygenio](https://github.com/EsauM10/oxygenio).

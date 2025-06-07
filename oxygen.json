@@ -7,7 +7,7 @@
     "distFolder": "dist",
     "staticFolder": "assets",
     "window": {
-        "title": "Expenses Tracker",
+        "title": "Despezzas",
         "maximize": true,
         "console": false
     }
